@@ -1,6 +1,6 @@
 spring:
   application:
-    name: acdatascedule
+    name: acdataschedule
 
 server:
   port: 10006
