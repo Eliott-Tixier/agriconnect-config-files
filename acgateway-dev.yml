@@ -2,8 +2,6 @@
 spring:
   application:
     name: apigateway # nom de l'application
-  server:
-    port: 10000
   cloud:
     # Configuration de l'API Gateway
     gateway:
@@ -79,11 +77,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/ # url d'accès à l'annuaire
-  instance:
-    metadata-map:
-      prometheus.scrape: "true"
-      prometheus.path: "/actuator/prometheus"
-      prometheus.port: "${management.server.port}"
 
 # Configuration du log.
 logging:
@@ -93,4 +86,5 @@ logging:
     reactor.netty: DEBUG
     reactor.netty.http.client: DEBUG # pour avoir plus d'infos sur les appels HTTP
 
-
+server:
+    port: 10000
