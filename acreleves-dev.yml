@@ -1,9 +1,7 @@
-# Proprietes de l'application
 spring:
   application:
     name: acreleves # nom de l'application
-  server:
-    port: 10005
+  
   data:
     mongodb:
       host: localhost # URL mongodb
@@ -33,4 +31,7 @@ management:
 # Configuration du log.
 logging:
   level:
-    org.springframework.web: INFO # Choix du niveau de log affich�
+    org.springframework.web: INFO # Choix du niveau de log affich
+
+server:
+    port: 10005
