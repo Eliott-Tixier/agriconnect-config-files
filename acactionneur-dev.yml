@@ -23,6 +23,7 @@ spring:
     url: jdbc:mysql://localhost:3307/agriconect-actionneurs
     username: root
     password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
     
   doc:
     api-docs:
