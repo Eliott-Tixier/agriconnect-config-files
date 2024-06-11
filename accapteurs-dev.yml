@@ -1,6 +1,6 @@
 spring:
   application:
-    name: acapteurs
+    name: accapteurs
   server:
     port: 10004 
   jpa:
