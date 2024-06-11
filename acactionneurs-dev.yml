@@ -1,7 +1,7 @@
 # Proprietes de l'application
 spring:
   application:
-    name: agriconnect-actionneurs
+    name: acactionneurs
   server:
     port: 10003
   cloud:
