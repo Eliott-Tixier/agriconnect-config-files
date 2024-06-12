@@ -25,7 +25,7 @@ spring:
       routes:
         #Service ACTIONNEUR
         - id: actionneur-service
-          uri: lb://agriconnect-actionneurs/ #Attention : lb et pas HTTP. Lb est prêt pour faire du load-balancing
+          uri: lb://acactionneurs/ #Attention : lb et pas HTTP. Lb est prêt pour faire du load-balancing
           predicates:
             # On matche tout ce qui commence par /api/actionneurs
             - Path=/api/actionneurs/**
@@ -34,14 +34,14 @@ spring:
             - RewritePath=/api/actionneurs/(?<segment>.*), /$\\{segment}
         #Service CAPTEUR
         - id: capteur-service
-          uri: lb://agriconnect-capteur/
+          uri: lb://accapteur/
           predicates:
             - Path=/api/capteurs/**
           filters:
             - RewritePath=/api/capteurs/(?<segment>.*), /$\\{segment}
         #Service RELEVE
         - id: releve-service
-          uri: lb://agriconnect-releve/ #Attention : lb et pas HTTP. Lb est prêt pour faire du load-balancing
+          uri: lb://acreleve/ #Attention : lb et pas HTTP. Lb est prêt pour faire du load-balancing
           predicates:
             # On matche tout ce qui commence par /api/releves
             - Path=/api/releves/**
@@ -50,7 +50,7 @@ spring:
             - RewritePath=/api/releves/(?<segment>.*), /$\\{segment}
         #Service CAPTEUR-RELEVE
         - id: capteur-releve-composite
-          uri: lb://agriconnect-composite-capteur-releve/
+          uri: lb://accapteurreleves/
           predicates:
             - Path=/api/capteurreleve/**
           filters:

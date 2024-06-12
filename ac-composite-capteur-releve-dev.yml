@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ac-composite-capteur-releve
+    name: accapteurreleves
 
 server:
   port: 10007
