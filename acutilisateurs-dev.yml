@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: acutilisateurs
+  
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:mysql://localhost:3306/agriconnect-utilisateurs?serverTimezone=UTC
+    username: root
+    password: root
+    database-platform: org.hibernate.dialect.MySQLDialect
+  cloud:
+    # Activation remontée management dans Eureka
+    config:
+      service-registry:
+        auto-registration:
+          register-management: on
+
+# Configuration du log.
+logging:
+  level:
+    org.springframework.web: INFO # Choix du niveau de log affiché
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: env,health,
+          info,metrics,
+          loggers,mappings, prometheus
+  tracing:
+    sampling:
+      probability: 1.0
+server:
+    port: 10008
