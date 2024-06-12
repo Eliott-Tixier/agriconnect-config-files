@@ -34,7 +34,7 @@ spring:
             - RewritePath=/api/actionneurs/(?<segment>.*), /$\\{segment}
         #Service CAPTEUR
         - id: capteur-service
-          uri: lb://accapteur/
+          uri: lb://accapteurs/
           predicates:
             - Path=/api/capteurs/**
           filters:
