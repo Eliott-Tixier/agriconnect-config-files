@@ -1,19 +1,14 @@
 spring:
   application:
-    name: acdataschedule
-
-server:
-  port: 10006
+    name: acstatistiques
 
 springdoc:
   api-docs:
     path: /api/swagger
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-      
+server:
+  port: 10010
+
 management:
   endpoints:
     web:
@@ -24,3 +19,8 @@ management:
   tracing:
     sampling:
       probability: 1.0
+
+# Configuration du log.
+logging:
+  level:
+    org.springframework.web: INFO # Choix du niveau de log affiché
