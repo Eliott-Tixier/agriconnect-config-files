@@ -61,6 +61,11 @@ spring:
       service-registry:
         auto-registration:
           register-management: on
+
+springdoc:
+  api-docs:
+    path: /api/swagger
+    
 # Activation des endpoints pour le monitoring
 management:
   endpoints:
