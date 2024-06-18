@@ -6,17 +6,23 @@
       # Configuration de l'API Gateway
       gateway:
         globalcors:
-          cors-configurations:
+          corsConfigurations:
             '[/**]':
               allowedOrigins: "*"
               allowedMethods:
-                - "*"
                 - GET
                 - POST
-                - DELETE
                 - PUT
-                - PATCH
+                - DELETE
                 - OPTIONS
+              allowedHeaders:
+                - Content-Type
+                - Authorization
+                - X-Requested-With
+                - Accept
+                - Origin
+              allowCredentials: true
+              maxAge: 3600
         discovery:
           locator:
             enabled: true #activation eureka locator
