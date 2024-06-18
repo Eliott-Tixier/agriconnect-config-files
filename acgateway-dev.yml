@@ -38,66 +38,66 @@
             uri: lb://accapteurs/
             predicates:
               - Path=/api/capteurs/**
-            filters:
-              - RewritePath=/api/capteurs/(?<segment>.*), /${segment}
+            #filters:
+              #- RewritePath=/api/capteurs/(?<segment>.*), /${segment}
           #Service RELEVE
           - id: releve-service
             uri: lb://acreleves/ #Attention : lb et pas HTTP. Lb est prêt pour faire du load-balancing
             predicates:
               # On matche tout ce qui commence par /api/releves
               - Path=/api/releves/**
-            filters:
+            #filters:
               # On va réécrire l'URL pour enlever le /api/releves
-              - RewritePath=/api/releves/(?<segment>.*), /${segment}
+              #- RewritePath=/api/releves/(?<segment>.*), /${segment}
           #Service CAPTEUR-RELEVE
           - id: capteur-releve-composite
             uri: lb://accapteurreleves/
             predicates:
               - Path=/api/capteurreleve/**
-            filters:
-              - RewritePath=/api/capteurreleve/(?<segment>.*), /${segment}
+            #filters:
+              #- RewritePath=/api/capteurreleve/(?<segment>.*), /${segment}
           #Service DATASCHEDULE
           - id: dataschedule-service
             uri: lb://acdataschedule/
             predicates:
               - Path=/api/dataschedules/**
-            filters:
-              - RewritePath=/api/dataschedules/(?<segment>.*), /${segment}
+            #filters:
+              # - RewritePath=/api/dataschedules/(?<segment>.*), /${segment}
           #Service UCA
           - id: uca-composite
             uri: lb://acuca/
             predicates:
             - Path=/api/uca/**
-            filters:
-            - RewritePath=/api/ucas/(?<segment>.*), /${segment}
+            #filters:
+            #- RewritePath=/api/ucas/(?<segment>.*), /${segment}
           #Service UTILISATEUR
           - id: utilisateur-service
             uri: lb://acutilisateurs/
             predicates:
             - Path=/api/utilisateurs/**
-            filters:
-            - RewritePath=/api/utilisateurs/(?<segment>.*), /${segment}
+            # filters:
+            #- RewritePath=/api/utilisateurs/(?<segment>.*), /${segment}
           #Service Limiteur
           - id: limiteur-service
             uri: lb://aclimiteur/
             predicates:
             - Path=/api/limites/**
-            filters:
-            - RewritePath=/api/limiteurs/(?<segment>.*), /${segment}
+            #filters:
+            #- RewritePath=/api/limiteurs/(?<segment>.*), /${segment}
           #Service Statistique
           - id: statistique-service
             uri: lb://acstatistiques/
             predicates:
               - Path=/api/statistiques/**
-            filters:
-              - RewritePath=/api/statistiques/(?<segment>.*), /${segment}
+            #filters:
+              # - RewritePath=/api/statistiques/(?<segment>.*), /${segment}
           #Service Historique
           - id: historique-service
             uri: lb://achistoriques/
             predicates:
               - Path=/api/historiques/**
-            filters:
-              - RewritePath=/api/historiques/(?<segment>.*), /${segment}
+            #filters:
+              # - RewritePath=/api/historiques/(?<segment>.*), /${segment}
         enabled: on # Activation gateway
       # Activation remontée management dans Eureka
       config:
