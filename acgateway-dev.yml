@@ -30,9 +30,9 @@
             predicates:
               # On matche tout ce qui commence par /api/actionneurs
               - Path=/api/actionneurs/**
-            filters:
+            #filters:
               # On va réécrire l'URL pour enlever le /api/actionneurs
-              - RewritePath=/api/actionneurs/(?<segment>.*), /${segment}
+              # - RewritePath=/api/actionneurs/(?<segment>.*), /${segment}
           #Service CAPTEUR
           - id: capteur-service
             uri: lb://accapteurs/
